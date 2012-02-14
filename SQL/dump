@@ -1,0 +1,67 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE queue (
+  id integer NOT NULL primary key autoincrement,
+  quote longtext NOT NULL
+);
+CREATE TABLE settings (
+  template text NOT NULL,
+  heading varchar(80) NOT NULL default '',
+  qlimit integer NOT NULL default '0',
+  title varchar(80) NOT NULL default '',
+  style text NOT NULL
+);
+CREATE TABLE config (id integer NOT NULL default '0', name varchar(30) NOT NULL default '', info text NOT NULL, extra varchar(255) NOT NULL default '');
+INSERT INTO config VALUES(1,'tlmain','<b>Welcome!</b><br />\r\nBrowse away to your amusement, and feel free to add some quotes yourself.<br />\r\n<br />\r\nIf you like or dislike a quote, vote with the + and - links. If you feel that the quote doesn''t deserve to be in the database at all, click its [X] link next to it; while the quote will not be removed from the database immediately, it will be resubmitted for review, and it is possible that it will be removed.<br />\r\n<br />\r\n<b>Questions? Comments?:</b><br />\r\n<a href=''mailto:admin@whatever.com''>admin@whatever.com</a><br />\r\n<br />\r\n<hr><br />\r\n<br />\r\n<b>Other Stuff</b>','');
+INSERT INTO config VALUES(2,'managers','Admin','');
+INSERT INTO config VALUES(3,'Moderators','','');
+INSERT INTO config VALUES(4,'qdbClosed','0','test');
+INSERT INTO config VALUES(5,'qdbSubClosed','0','');
+CREATE TABLE news (
+  id integer NOT NULL DEFAULT '0',
+  date varchar(20) NOT NULL DEFAULT '',
+  author varchar(30) NOT NULL DEFAULT '',
+  news text NOT NULL,
+  hide integer NOT NULL DEFAULT '0'
+);
+INSERT INTO news VALUES(1,'00-00-0000','Admin','Install Successful :) ',0);
+CREATE TABLE templates (
+  id integer NOT NULL DEFAULT '0',
+  folder_name varchar(50) NOT NULL DEFAULT '',
+  used integer NOT NULL DEFAULT '0'
+);
+INSERT INTO templates VALUES(1,'bash_org',0);
+CREATE TABLE bans (
+  id integer NOT NULL DEFAULT '0',
+  ip varchar(15) NOT NULL DEFAULT '',
+  reason text NOT NULL,
+  hidden text NOT NULL DEFAULT '0'
+);
+CREATE TABLE admins (
+  username varchar(16) NOT NULL default '',
+  password text NOT NULL,
+  status text NOT NULL default 'MOD',
+  ip text NOT NULL,
+  id integer NOT NULL primary key autoincrement
+);
+INSERT INTO admins VALUES('admin','5f4dcc3b5aa765d61d8327deb882cf99','ADM','127.0.0.1',0);
+CREATE TABLE votes (
+  id integer NOT NULL default '0',
+  qid integer NOT NULL default '0',
+  vid integer NOT NULL default '0',
+  ip text NOT NULL
+);
+CREATE TABLE quotes (
+  id integer NOT NULL DEFAULT '0',
+  quote text NOT NULL,
+  comment text NOT NULL,
+  ip varchar(50) NOT NULL DEFAULT '',
+  rox integer NOT NULL DEFAULT '0',
+  sox integer NOT NULL DEFAULT '0',
+  sux integer NOT NULL DEFAULT '0',
+  score integer NOT NULL DEFAULT '0',
+  approved char(1) NOT NULL DEFAULT '0'
+);
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('admins',0);
+COMMIT;

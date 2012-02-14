@@ -1,0 +1,7 @@
+admin panel
+captcha for posting
+date
+ldap auth - maybe in future
+robots.txt update
+tags
+text-mode? script to retrieve it with a terminal

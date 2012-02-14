@@ -1,0 +1,46 @@
+		.smalltext {font-family: arial, helvetica, sans-serif;font-size: 10px;background-color: #f0f0f0;color: #000000}
+		.seltext {font-family: arial, helvetica, sans-serif;font-size: 10px;background-color: #ffffff;color: #000000}	
+		input.text {color: #000000; background-color: #ffffff;}
+		textarea {color: #000000; background-color: #ffffff;}
+		select {color: #000000; background-color: #ffffff;}
+		.qt {
+			font-family: courier new, lucida console, fixed;
+			font-size: 10pt;
+			margin-top: 0px;
+		}
+		a {
+			font-family: default;
+			font-size: 8pt;
+			text-decoration: none;
+		}
+		a.cr {
+			font-family: default;
+			font-size: 8pt;
+			text-decoration: none;
+			color: #000000;	
+		}
+		input.button {
+			background-color: #f0f0f0;
+			color: #000000;
+		}
+		p.quote {
+			font-family: courier new, lucida console, fixed;
+			font-size: smaller;
+			margin-bottom: 0px;
+		}
+		.bodytext {
+			font-family: arial, helvetica, sans-serif;
+			line-height: 21px;
+			font-size: smaller;
+			color: #000000;
+		}
+		.footertext {
+			font-family: arial, helvetica, sans-serif;
+			font-size: smaller;
+		}
+		.toplinks {
+			font-family: arial, helvetica, sans-serif;
+			color: #000000;
+			font-size: smaller;
+		}
+		.topnum {font-family: arial, helvetica, sans-serif; color: #000000;}
